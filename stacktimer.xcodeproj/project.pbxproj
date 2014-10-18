@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1751DD6B19F2A9090020BB6A /* STRoutineTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1751DD6A19F2A9090020BB6A /* STRoutineTableView.m */; };
 		17EA17FD19F2A545007C06E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EA17FC19F2A545007C06E4 /* main.m */; };
 		17EA180019F2A545007C06E4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EA17FF19F2A545007C06E4 /* AppDelegate.m */; };
 		17EA180319F2A545007C06E4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EA180219F2A545007C06E4 /* ViewController.m */; };
@@ -14,6 +15,7 @@
 		17EA180819F2A545007C06E4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17EA180719F2A545007C06E4 /* Images.xcassets */; };
 		17EA180B19F2A545007C06E4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17EA180919F2A545007C06E4 /* LaunchScreen.xib */; };
 		17EA181719F2A545007C06E4 /* stacktimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EA181619F2A545007C06E4 /* stacktimerTests.m */; };
+		F797C994F0C8DB9019BF7926 /* libPods-stacktimer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 343A9D2752B5B22CEFAB7D93 /* libPods-stacktimer.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1751DD6919F2A9090020BB6A /* STRoutineTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRoutineTableView.h; sourceTree = "<group>"; };
+		1751DD6A19F2A9090020BB6A /* STRoutineTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRoutineTableView.m; sourceTree = "<group>"; };
 		17EA17F719F2A545007C06E4 /* stacktimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stacktimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17EA17FB19F2A545007C06E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17EA17FC19F2A545007C06E4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -40,6 +44,9 @@
 		17EA181019F2A545007C06E4 /* stacktimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = stacktimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17EA181519F2A545007C06E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17EA181619F2A545007C06E4 /* stacktimerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = stacktimerTests.m; sourceTree = "<group>"; };
+		2720589B70DB7FB67FFF9E06 /* Pods-stacktimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stacktimer.release.xcconfig"; path = "Pods/Target Support Files/Pods-stacktimer/Pods-stacktimer.release.xcconfig"; sourceTree = "<group>"; };
+		343A9D2752B5B22CEFAB7D93 /* libPods-stacktimer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-stacktimer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEF2EAC53CB2971FA4A6D13A /* Pods-stacktimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stacktimer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-stacktimer/Pods-stacktimer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F797C994F0C8DB9019BF7926 /* libPods-stacktimer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +68,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		041A822750785A1D96DAA73B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				343A9D2752B5B22CEFAB7D93 /* libPods-stacktimer.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		17EA17EE19F2A545007C06E4 = {
 			isa = PBXGroup;
 			children = (
 				17EA17F919F2A545007C06E4 /* stacktimer */,
 				17EA181319F2A545007C06E4 /* stacktimerTests */,
 				17EA17F819F2A545007C06E4 /* Products */,
+				E10DBBFA0561FF3453B8DF45 /* Pods */,
+				041A822750785A1D96DAA73B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,6 +104,8 @@
 				17EA180119F2A545007C06E4 /* ViewController.h */,
 				17EA180219F2A545007C06E4 /* ViewController.m */,
 				17EA180419F2A545007C06E4 /* Main.storyboard */,
+				1751DD6919F2A9090020BB6A /* STRoutineTableView.h */,
+				1751DD6A19F2A9090020BB6A /* STRoutineTableView.m */,
 				17EA180719F2A545007C06E4 /* Images.xcassets */,
 				17EA180919F2A545007C06E4 /* LaunchScreen.xib */,
 				17EA17FA19F2A545007C06E4 /* Supporting Files */,
@@ -119,6 +139,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E10DBBFA0561FF3453B8DF45 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BEF2EAC53CB2971FA4A6D13A /* Pods-stacktimer.debug.xcconfig */,
+				2720589B70DB7FB67FFF9E06 /* Pods-stacktimer.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +155,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 17EA181A19F2A545007C06E4 /* Build configuration list for PBXNativeTarget "stacktimer" */;
 			buildPhases = (
+				AD6004779BC67E9235935F62 /* Check Pods Manifest.lock */,
 				17EA17F319F2A545007C06E4 /* Sources */,
 				17EA17F419F2A545007C06E4 /* Frameworks */,
 				17EA17F519F2A545007C06E4 /* Resources */,
+				7A0A302A7892C876CFE363ED /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -168,6 +199,7 @@
 				TargetAttributes = {
 					17EA17F619F2A545007C06E4 = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = 7M9BH2NM79;
 					};
 					17EA180F19F2A545007C06E4 = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -214,6 +246,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7A0A302A7892C876CFE363ED /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-stacktimer/Pods-stacktimer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD6004779BC67E9235935F62 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		17EA17F319F2A545007C06E4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -222,6 +287,7 @@
 				17EA180319F2A545007C06E4 /* ViewController.m in Sources */,
 				17EA180019F2A545007C06E4 /* AppDelegate.m in Sources */,
 				17EA17FD19F2A545007C06E4 /* main.m in Sources */,
+				1751DD6B19F2A9090020BB6A /* STRoutineTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,21 +407,29 @@
 		};
 		17EA181B19F2A545007C06E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BEF2EAC53CB2971FA4A6D13A /* Pods-stacktimer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = stacktimer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
 		17EA181C19F2A545007C06E4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2720589B70DB7FB67FFF9E06 /* Pods-stacktimer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = stacktimer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -412,6 +486,7 @@
 				17EA181C19F2A545007C06E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		17EA181D19F2A545007C06E4 /* Build configuration list for PBXNativeTarget "stacktimerTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +495,7 @@
 				17EA181F19F2A545007C06E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
