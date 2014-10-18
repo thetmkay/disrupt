@@ -3,11 +3,8 @@
 
 source 'https://github.com/CocoaPods/Specs.git'
 
-target 'stacktimer' do
-	pod 'MagicalRecord'
-end
+pod 'MagicalRecord'
 
-target 'stacktimerTests' do
 
-end
+
 

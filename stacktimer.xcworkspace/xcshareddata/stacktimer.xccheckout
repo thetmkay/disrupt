@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5FA8DE91-7C23-4DD3-ABEE-A906D7F82655</string>
+	<key>IDESourceControlProjectName</key>
+	<string>stacktimer</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>67E69D4BBA3DFA036FA0C3732E50AC92EA2E0AA1</key>
+		<string>https://github.com/thetmkay/disrupt</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>stacktimer.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>67E69D4BBA3DFA036FA0C3732E50AC92EA2E0AA1</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/thetmkay/disrupt</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>67E69D4BBA3DFA036FA0C3732E50AC92EA2E0AA1</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>67E69D4BBA3DFA036FA0C3732E50AC92EA2E0AA1</string>
+			<key>IDESourceControlWCCName</key>
+			<string>stacktimer</string>
+		</dict>
+	</array>
+</dict>
+</plist>

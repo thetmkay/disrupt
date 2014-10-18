@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6244" systemVersion="14A388a" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Routine" representedClassName="Routine" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="timers" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Timer" inverseName="routine" inverseEntity="Timer" syncable="YES"/>
+    </entity>
+    <entity name="Timer" representedClassName="Timer" syncable="YES">
+        <attribute name="actionOnCompletion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="routine" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Routine" inverseName="timers" inverseEntity="Routine" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Timer" positionX="-63" positionY="-18" width="128" height="58"/>
+        <element name="Routine" positionX="-54" positionY="99" width="128" height="73"/>
+    </elements>
+</model>
