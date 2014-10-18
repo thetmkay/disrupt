@@ -15,6 +15,7 @@
 		17BE83DC19F2C37000E09902 /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = 17BE83DB19F2C37000E09902 /* Timer.m */; };
 		17BE83DF19F2CE4300E09902 /* STRoutineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17BE83DE19F2CE4300E09902 /* STRoutineTableViewController.m */; };
 		17BE83E219F2DB2600E09902 /* STAddRoutineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17BE83E119F2DB2600E09902 /* STAddRoutineViewController.m */; };
+		17BE83E419F2E9D600E09902 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17BE83E319F2E9D600E09902 /* QuartzCore.framework */; };
 		17EA17FD19F2A545007C06E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EA17FC19F2A545007C06E4 /* main.m */; };
 		17EA180019F2A545007C06E4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EA17FF19F2A545007C06E4 /* AppDelegate.m */; };
 		17EA180319F2A545007C06E4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EA180219F2A545007C06E4 /* ViewController.m */; };
@@ -51,6 +52,7 @@
 		17BE83DE19F2CE4300E09902 /* STRoutineTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRoutineTableViewController.m; sourceTree = "<group>"; };
 		17BE83E019F2DB2600E09902 /* STAddRoutineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STAddRoutineViewController.h; path = ../STAddRoutineViewController.h; sourceTree = "<group>"; };
 		17BE83E119F2DB2600E09902 /* STAddRoutineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STAddRoutineViewController.m; path = ../STAddRoutineViewController.m; sourceTree = "<group>"; };
+		17BE83E319F2E9D600E09902 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		17EA17F719F2A545007C06E4 /* stacktimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stacktimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17EA17FB19F2A545007C06E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17EA17FC19F2A545007C06E4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17BE83E419F2E9D600E09902 /* QuartzCore.framework in Frameworks */,
 				17A75C2119F2BB440050EA4B /* Foundation.framework in Frameworks */,
 				B6457105E63A73043B9C575A /* libPods.a in Frameworks */,
 			);
@@ -95,6 +98,7 @@
 		041A822750785A1D96DAA73B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				17BE83E319F2E9D600E09902 /* QuartzCore.framework */,
 				17A75C2019F2BB440050EA4B /* Foundation.framework */,
 				343A9D2752B5B22CEFAB7D93 /* libPods-stacktimer.a */,
 				C75FFCBF45B655979AC780DD /* libPods.a */,
@@ -385,6 +389,7 @@
 /* Begin XCBuildConfiguration section */
 		17EA181819F2A545007C06E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD03B6B54FB805EBFF989BA1 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

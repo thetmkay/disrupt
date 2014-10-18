@@ -14,6 +14,7 @@
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) STRoutine *routineManager;
+@property (strong, nonatomic) NSString *selectedCellTitle;
 
 @end
 
@@ -33,6 +34,8 @@
         // Update to handle the error appropriately.
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
     }
+    
+    self.tableView.delegate = self;
 }
 
 - (NSFetchedResultsController *)fetchedResultsController {
@@ -115,6 +118,12 @@
     [self.tableView endUpdates];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    Routine *routine = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    self.selectedCellTitle = routine.nameForRoutine;
+    [self performSegueWithIdentifier:@"routinesToRoutine" sender:self];
+}
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -149,14 +158,17 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"routinesToRoutine"]) {
+        UIViewController *viewController = [segue destinationViewController];
+        viewController.title = self.selectedCellTitle;
+    }
 }
-*/
 
 @end
