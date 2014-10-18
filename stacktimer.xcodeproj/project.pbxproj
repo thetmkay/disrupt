@@ -10,9 +10,11 @@
 		1751DD6B19F2A9090020BB6A /* STRoutineTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1751DD6A19F2A9090020BB6A /* STRoutineTableView.m */; };
 		17A75C1F19F2B8C70050EA4B /* STModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17A75C1D19F2B8C70050EA4B /* STModel.xcdatamodeld */; };
 		17A75C2119F2BB440050EA4B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A75C2019F2BB440050EA4B /* Foundation.framework */; };
-		17A75C2419F2BD460050EA4B /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A75C2319F2BD460050EA4B /* Timer.m */; };
-		17A75C2719F2BD470050EA4B /* Routine.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A75C2619F2BD470050EA4B /* Routine.m */; };
 		17A75C2A19F2BDC80050EA4B /* STRoutine.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A75C2919F2BDC80050EA4B /* STRoutine.m */; };
+		17BE83D919F2C36F00E09902 /* Routine.m in Sources */ = {isa = PBXBuildFile; fileRef = 17BE83D819F2C36F00E09902 /* Routine.m */; };
+		17BE83DC19F2C37000E09902 /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = 17BE83DB19F2C37000E09902 /* Timer.m */; };
+		17BE83DF19F2CE4300E09902 /* STRoutineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17BE83DE19F2CE4300E09902 /* STRoutineTableViewController.m */; };
+		17BE83E219F2DB2600E09902 /* STAddRoutineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17BE83E119F2DB2600E09902 /* STAddRoutineViewController.m */; };
 		17EA17FD19F2A545007C06E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EA17FC19F2A545007C06E4 /* main.m */; };
 		17EA180019F2A545007C06E4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EA17FF19F2A545007C06E4 /* AppDelegate.m */; };
 		17EA180319F2A545007C06E4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EA180219F2A545007C06E4 /* ViewController.m */; };
@@ -39,12 +41,16 @@
 		177590FF19F2AFC700172C1B /* STPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPrefix.pch; sourceTree = "<group>"; };
 		17A75C1E19F2B8C70050EA4B /* STModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = STModel.xcdatamodel; sourceTree = "<group>"; };
 		17A75C2019F2BB440050EA4B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		17A75C2219F2BD460050EA4B /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
-		17A75C2319F2BD460050EA4B /* Timer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
-		17A75C2519F2BD470050EA4B /* Routine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Routine.h; sourceTree = "<group>"; };
-		17A75C2619F2BD470050EA4B /* Routine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Routine.m; sourceTree = "<group>"; };
 		17A75C2819F2BDC80050EA4B /* STRoutine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRoutine.h; sourceTree = "<group>"; };
 		17A75C2919F2BDC80050EA4B /* STRoutine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRoutine.m; sourceTree = "<group>"; };
+		17BE83D719F2C36F00E09902 /* Routine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Routine.h; sourceTree = "<group>"; };
+		17BE83D819F2C36F00E09902 /* Routine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Routine.m; sourceTree = "<group>"; };
+		17BE83DA19F2C37000E09902 /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
+		17BE83DB19F2C37000E09902 /* Timer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
+		17BE83DD19F2CE4300E09902 /* STRoutineTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRoutineTableViewController.h; sourceTree = "<group>"; };
+		17BE83DE19F2CE4300E09902 /* STRoutineTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRoutineTableViewController.m; sourceTree = "<group>"; };
+		17BE83E019F2DB2600E09902 /* STAddRoutineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STAddRoutineViewController.h; path = ../STAddRoutineViewController.h; sourceTree = "<group>"; };
+		17BE83E119F2DB2600E09902 /* STAddRoutineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STAddRoutineViewController.m; path = ../STAddRoutineViewController.m; sourceTree = "<group>"; };
 		17EA17F719F2A545007C06E4 /* stacktimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stacktimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17EA17FB19F2A545007C06E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17EA17FC19F2A545007C06E4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -102,10 +108,10 @@
 				17A75C2819F2BDC80050EA4B /* STRoutine.h */,
 				17A75C2919F2BDC80050EA4B /* STRoutine.m */,
 				17A75C1D19F2B8C70050EA4B /* STModel.xcdatamodeld */,
-				17A75C2519F2BD470050EA4B /* Routine.h */,
-				17A75C2619F2BD470050EA4B /* Routine.m */,
-				17A75C2219F2BD460050EA4B /* Timer.h */,
-				17A75C2319F2BD460050EA4B /* Timer.m */,
+				17BE83DA19F2C37000E09902 /* Timer.h */,
+				17BE83DB19F2C37000E09902 /* Timer.m */,
+				17BE83D719F2C36F00E09902 /* Routine.h */,
+				17BE83D819F2C36F00E09902 /* Routine.m */,
 			);
 			name = "Data and Models";
 			sourceTree = "<group>";
@@ -133,12 +139,16 @@
 		17EA17F919F2A545007C06E4 /* stacktimer */ = {
 			isa = PBXGroup;
 			children = (
+				17BE83E019F2DB2600E09902 /* STAddRoutineViewController.h */,
+				17BE83E119F2DB2600E09902 /* STAddRoutineViewController.m */,
 				17A75C2B19F2BDD40050EA4B /* Data and Models */,
 				17EA17FE19F2A545007C06E4 /* AppDelegate.h */,
 				17EA17FF19F2A545007C06E4 /* AppDelegate.m */,
 				17EA180119F2A545007C06E4 /* ViewController.h */,
 				17EA180219F2A545007C06E4 /* ViewController.m */,
 				17EA180419F2A545007C06E4 /* Main.storyboard */,
+				17BE83DD19F2CE4300E09902 /* STRoutineTableViewController.h */,
+				17BE83DE19F2CE4300E09902 /* STRoutineTableViewController.m */,
 				1751DD6919F2A9090020BB6A /* STRoutineTableView.h */,
 				177590FF19F2AFC700172C1B /* STPrefix.pch */,
 				1751DD6A19F2A9090020BB6A /* STRoutineTableView.m */,
@@ -325,11 +335,13 @@
 				17A75C1F19F2B8C70050EA4B /* STModel.xcdatamodeld in Sources */,
 				17EA180319F2A545007C06E4 /* ViewController.m in Sources */,
 				17EA180019F2A545007C06E4 /* AppDelegate.m in Sources */,
+				17BE83DC19F2C37000E09902 /* Timer.m in Sources */,
 				17A75C2A19F2BDC80050EA4B /* STRoutine.m in Sources */,
-				17A75C2419F2BD460050EA4B /* Timer.m in Sources */,
-				17A75C2719F2BD470050EA4B /* Routine.m in Sources */,
+				17BE83D919F2C36F00E09902 /* Routine.m in Sources */,
+				17BE83E219F2DB2600E09902 /* STAddRoutineViewController.m in Sources */,
 				17EA17FD19F2A545007C06E4 /* main.m in Sources */,
 				1751DD6B19F2A9090020BB6A /* STRoutineTableView.m in Sources */,
+				17BE83DF19F2CE4300E09902 /* STRoutineTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

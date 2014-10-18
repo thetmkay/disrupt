@@ -9,11 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class Routine;
 
 @interface Timer : NSManagedObject
 
-@property (nonatomic, retain) NSString * time;
 @property (nonatomic, retain) NSString * actionOnCompletion;
-@property (nonatomic, retain) NSManagedObject *routine;
+@property (nonatomic, retain) NSString * time;
+@property (nonatomic, retain) Routine *routine;
 
 @end

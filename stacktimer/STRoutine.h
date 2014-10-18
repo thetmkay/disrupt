@@ -12,9 +12,9 @@
 
 @interface STRoutine : NSObject
 
-- (void)addNewRoutineWithName:(NSString *)name;
+- (void)addNewRoutineWithName:(NSString *)name withCompletionBlock:(void (^)(BOOL success))completionBlock;
 
 // adds timer to the end of the routine
-- (void)addTimerToRoutine:(Timer *)timer;
+- (void)addTimer:(Timer *)timer toRoutineWithName:(NSString *)routineName  withCompletionBlock:(void (^)(BOOL success))completionBlock;
 
 @end

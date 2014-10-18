@@ -13,6 +13,7 @@
 
 @interface Routine : NSManagedObject
 
+@property (nonatomic, retain) NSString * nameForRoutine;
 @property (nonatomic, retain) NSOrderedSet *timers;
 @end
 

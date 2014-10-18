@@ -7,12 +7,13 @@
 //
 
 #import "Timer.h"
+#import "Routine.h"
 
 
 @implementation Timer
 
-@dynamic time;
 @dynamic actionOnCompletion;
+@dynamic time;
 @dynamic routine;
 
 @end

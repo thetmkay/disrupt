@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="f6o-EY-Yl7">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -14,14 +15,83 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="NqI-T1-tGe" kind="relationship" relationship="rootViewController" id="yCj-r2-gpM"/>
+                        <segue destination="Sf3-ND-bHR" kind="relationship" relationship="rootViewController" id="A5c-hz-Wwc"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IGQ-UJ-jpr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-314" y="792"/>
         </scene>
-        <!--stack timer-->
+        <!--Navigation Controller-->
+        <scene sceneID="Aay-2w-fXh">
+            <objects>
+                <navigationController id="79c-b2-YSv" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2Po-AX-VLu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="q6s-0D-iMu" kind="relationship" relationship="rootViewController" id="zUC-dP-hmC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DxF-5k-S7I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-409" y="135"/>
+        </scene>
+        <!--Add Routine-->
+        <scene sceneID="Wxg-Sz-ZII">
+            <objects>
+                <viewController id="q6s-0D-iMu" customClass="STAddRoutineViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yWQ-Ln-Ng9"/>
+                        <viewControllerLayoutGuide type="bottom" id="q5R-g8-YZW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EZD-jH-Z5R">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Routine Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lpA-f2-Yyt">
+                                <rect key="frame" x="16" y="74" width="114" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jou-xz-ZeK">
+                                <rect key="frame" x="16" y="102" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Jou-xz-ZeK" firstAttribute="trailing" secondItem="EZD-jH-Z5R" secondAttribute="trailingMargin" id="5iR-0X-gLU"/>
+                            <constraint firstItem="lpA-f2-Yyt" firstAttribute="top" secondItem="yWQ-Ln-Ng9" secondAttribute="bottom" constant="10" id="KlE-eb-L4c"/>
+                            <constraint firstItem="Jou-xz-ZeK" firstAttribute="leading" secondItem="EZD-jH-Z5R" secondAttribute="leadingMargin" id="KoP-cS-e7S"/>
+                            <constraint firstItem="Jou-xz-ZeK" firstAttribute="top" secondItem="lpA-f2-Yyt" secondAttribute="bottom" constant="8" id="YE3-W0-xKM"/>
+                            <constraint firstItem="lpA-f2-Yyt" firstAttribute="leading" secondItem="EZD-jH-Z5R" secondAttribute="leadingMargin" id="uXS-WI-9ai"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Routine" id="zrr-iN-4ct">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="t9V-Lv-IWU">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="q6s-0D-iMu" id="ejr-1G-jau"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="LD0-zw-4Xl">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="q6s-0D-iMu" id="6l3-VZ-yHL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="routineNameTextField" destination="Jou-xz-ZeK" id="xlj-ec-7ug"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kEl-Da-19B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="425" y="188"/>
+        </scene>
+        <!--Routine Name-->
         <scene sceneID="wHd-00-viL">
             <objects>
                 <tableViewController id="NqI-T1-tGe" sceneMemberID="viewController">
@@ -30,7 +100,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="timer cell" rowHeight="74" id="iAe-sX-Qfp">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="timer" rowHeight="74" id="iAe-sX-Qfp">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iAe-sX-Qfp" id="9KQ-rY-tRT">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -56,13 +126,58 @@
                             <outlet property="delegate" destination="NqI-T1-tGe" id="yqR-gO-XCp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="stack timer" id="QFC-Hj-9TB">
+                    <navigationItem key="navigationItem" title="Routine Name" id="QFC-Hj-9TB">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="UJ7-pJ-s40"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YOZ-yy-Vhc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="452" y="792"/>
+            <point key="canvasLocation" x="1260" y="792"/>
+        </scene>
+        <!--Routines-->
+        <scene sceneID="xwr-R5-LNE">
+            <objects>
+                <tableViewController id="Sf3-ND-bHR" customClass="STRoutineTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="57" sectionHeaderHeight="22" sectionFooterHeight="22" id="Gdp-K1-f1C">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="routineCell" textLabel="LP7-3z-jcz" rowHeight="57" style="IBUITableViewCellStyleDefault" id="zIW-EJ-gkc">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zIW-EJ-gkc" id="cQv-Z9-gGP">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LP7-3z-jcz">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Sf3-ND-bHR" id="R4m-3V-1Hn"/>
+                            <outlet property="delegate" destination="Sf3-ND-bHR" id="4ii-rn-9DX"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Routines" id="bpR-iA-FVW">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="vT4-4p-vtZ">
+                            <connections>
+                                <action selector="addRoutineButtonTapped:" destination="Sf3-ND-bHR" id="A2E-co-Ngu"/>
+                                <segue destination="79c-b2-YSv" kind="presentation" id="e6q-0w-4eT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="NqI-T1-tGe" kind="show" id="6yH-8w-qeh"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oHM-DY-gEx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="480" y="792"/>
         </scene>
     </scenes>
 </document>
