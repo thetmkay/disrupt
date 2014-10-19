@@ -39,6 +39,8 @@
 		5ECD0AAF19F2F72200A168E0 /* YMConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECD0AA919F2F72200A168E0 /* YMConstants.m */; };
 		5ECD0AB019F2F72200A168E0 /* YMHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECD0AAB19F2F72200A168E0 /* YMHTTPClient.m */; };
 		5ECD0AB119F2F72200A168E0 /* YMLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECD0AAD19F2F72200A168E0 /* YMLoginController.m */; };
+		5EF869BB19F35B840006178C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EF869B919F35B840006178C /* Bolts.framework */; };
+		5EF869BC19F35B840006178C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EF869BA19F35B840006178C /* Parse.framework */; };
 		B6457105E63A73043B9C575A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C75FFCBF45B655979AC780DD /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +110,8 @@
 		5ECD0AAB19F2F72200A168E0 /* YMHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMHTTPClient.m; sourceTree = "<group>"; };
 		5ECD0AAC19F2F72200A168E0 /* YMLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMLoginController.h; sourceTree = "<group>"; };
 		5ECD0AAD19F2F72200A168E0 /* YMLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMLoginController.m; sourceTree = "<group>"; };
+		5EF869B919F35B840006178C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		5EF869BA19F35B840006178C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		BEF2EAC53CB2971FA4A6D13A /* Pods-stacktimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stacktimer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-stacktimer/Pods-stacktimer.debug.xcconfig"; sourceTree = "<group>"; };
 		C75FFCBF45B655979AC780DD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD03B6B54FB805EBFF989BA1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -125,8 +129,10 @@
 				5E177E7D19F327E500EB095F /* libz.dylib in Frameworks */,
 				5E177E7B19F327D200EB095F /* CoreLocation.framework in Frameworks */,
 				5E177E7919F327CB00EB095F /* CoreGraphics.framework in Frameworks */,
+				5EF869BB19F35B840006178C /* Bolts.framework in Frameworks */,
 				5E177E7719F327C300EB095F /* CFNetwork.framework in Frameworks */,
 				5E177E7519F327BB00EB095F /* AudioToolbox.framework in Frameworks */,
+				5EF869BC19F35B840006178C /* Parse.framework in Frameworks */,
 				17BE83E419F2E9D600E09902 /* QuartzCore.framework in Frameworks */,
 				17A75C2119F2BB440050EA4B /* Foundation.framework in Frameworks */,
 				B6457105E63A73043B9C575A /* libPods.a in Frameworks */,
@@ -146,6 +152,8 @@
 		041A822750785A1D96DAA73B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5EF869B919F35B840006178C /* Bolts.framework */,
+				5EF869BA19F35B840006178C /* Parse.framework */,
 				5E177E8419F3280E00EB095F /* SystemConfiguration.framework */,
 				5E177E8219F3280600EB095F /* StoreKit.framework */,
 				5E177E8019F327FD00EB095F /* Security.framework */,
@@ -429,7 +437,6 @@
 				5E177E6819F2FD1800EB095F /* STAPIController.m in Sources */,
 				17EA17FD19F2A545007C06E4 /* main.m in Sources */,
 				5ECD0AB019F2F72200A168E0 /* YMHTTPClient.m in Sources */,
-				1751DD6B19F2A9090020BB6A /* STRoutineTableView.m in Sources */,
 				17BE83EF19F305E600E09902 /* STTimerViewController.m in Sources */,
 				17BE83EC19F2FD5200E09902 /* STAddTimerViewController.m in Sources */,
 				17BE83DF19F2CE4300E09902 /* STRoutineTableViewController.m in Sources */,
@@ -560,6 +567,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = stacktimer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -575,6 +586,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = stacktimer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

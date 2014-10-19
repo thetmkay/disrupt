@@ -9,6 +9,7 @@
 #import "STAPIController.h"
 #import "YMConstants.h"
 #import "YMHTTPClient.h"
+#import <Parse/Parse.h>
 
 @implementation STAPIController
 
@@ -127,6 +128,27 @@
 {
     NSLog(@"Making sample API call");
     
+    
+    NSDictionary *timer1 = @{@"time":@"1000",@"actionOnCompletion":@"beep"};
+    NSDictionary *timer2 = @{@"time":@"2000",@"actionOnCompletion":@"beep"};
+    NSDictionary *timer3 = @{@"time":@"4000",@"actionOnCompletion":@"beep"};
+    NSArray *timers = [[NSArray alloc] initWithObjects:timer1,timer2,timer3, nil ];
+    NSString *routineName = @"routinetest";
+    NSDictionary *routine = @{@"timers":timers,@"name":routineName};
+//    NSError *error;
+//    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:routine options:NSJSONWritingPrettyPrinted error:&error];
+    NSMutableString *baseTimerURL = [[NSMutableString alloc] initWithString:@"http://stacktimer.com/timer/"];
+    
+    PFObject *pfRoutine = [PFObject objectWithClassName:@"Routine"];
+    pfRoutine[@"timers"] = timers;
+    pfRoutine[@"name"] = routineName;
+    pfRoutine[@"user"] = user;
+    [pfRoutine save];
+    NSLog(@"id %@", pfRoutine.objectId);
+    [baseTimerURL appendString:pfRoutine.objectId];
+    NSLog(@"timer url %@", baseTimerURL);
+    NSURL *timerURL = [NSURL URLWithString:[baseTimerURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    
     // The YMHTTPClient uses a "baseUrl" with paths appended.  The baseUrl looks like "https://www.yammer.com"
     NSURL *baseURL = [NSURL URLWithString: YAMMER_BASE_URL];
     
@@ -136,7 +158,8 @@
     NSLog(@"Email %@", actor_email);
     
     NSDictionary *actor = @{@"name":actor_name,@"email":actor_email};
-    NSDictionary *object = @{@"url":@"http://stacktimer.com/timer/blah",@"title":@"See Timer", @"type":@"page"};
+    NSDictionary *object = @{@"url":timerURL,@"title":@"See Timer", @"type":@"page"};
+
     
     
     // Query params (in this case there are no params, but if there were, this is how you'd add them)

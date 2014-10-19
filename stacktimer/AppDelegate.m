@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MagicalRecord.h"
+#import <Parse/Parse.h>
 
 @interface AppDelegate ()
 
@@ -17,6 +18,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [Parse setApplicationId:@"TpudbmSzk74NMI1GBDfs4FJq4E5Tk4MbJ4kgb5rR"
+                  clientKey:@"5XjZBAq5aQMNUoNjGF3BtcDdnCxVjw44FVz76zJ3"];
     // Override point for customization after application launch.
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"STModel.sqlite"];
     return YES;
@@ -55,6 +58,12 @@
             return YES;
     } else if ([[url host] isEqualToString:@"add.timer"]) {
         NSLog(@"add timer called");
+        NSString *decoded = (__bridge_transfer NSString *)CFURLCreateStringByReplacingPercentEscapesUsingEncoding(NULL, (CFStringRef)[url query], CFSTR(""), kCFStringEncodingUTF8);
+        NSError *e = nil;
+        NSData *jsonData = [decoded dataUsingEncoding:NSUTF8StringEncoding];
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData: jsonData options: NSJSONReadingMutableContainers error: &e];
+        
+        NSLog(@"%@",  json);
     }
     
     // If we arrive here it means the login was successful, so now let's get the authToken to be used on all subsequent requests
