@@ -17,6 +17,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic) NSInteger currentIndexPath;
 
 @end
 
@@ -136,10 +137,20 @@
 #pragma mark - buttons
 
 - (IBAction)startPressed:(id)sender {
-    
+    if (self.currentIndexPath >= 0 && self.currentIndexPath < [[[self.fetchedResultsController sections] objectAtIndex:0] numberOfObjects]) {
+        NSIndexPath *indexPath = [[[NSIndexPath alloc] initWithIndex:0] indexPathByAddingIndex:self.currentIndexPath];
+        STTimerTableViewCell *cell = (STTimerTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+        cell.timerLabel.delegate = self;
+        [cell.timerLabel start];
+        self.currentIndexPath++;
+    }
 }
 
+#pragma mark - timer delegate
 
+- (void)timerLabel:(MZTimerLabel *)timerLabel finshedCountDownTimerWithTime:(NSTimeInterval)countTime {
+    [self startPressed:self];
+}
 
 #pragma mark - Navigation
 

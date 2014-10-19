@@ -121,17 +121,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="G5b-HE-WlM">
-                                <rect key="frame" x="0.0" y="394" width="320" height="162"/>
-                                <date key="date" timeIntervalSinceReferenceDate="435354816.97182202">
-                                    <!--2014-10-18 19:53:36 +0000-->
-                                </date>
-                            </datePicker>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pXf-4h-hvx">
+                                <rect key="frame" x="0.0" y="378" width="600" height="162"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8E-4I-Ibo">
+                                <rect key="frame" x="71" y="349" width="46" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mins" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X0u-k2-CDv">
+                                <rect key="frame" x="282.5" y="349" width="37" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Secs" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNo-V8-baD">
+                                <rect key="frame" x="494.5" y="349" width="38.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="5rf-cK-huG" firstAttribute="top" secondItem="G5b-HE-WlM" secondAttribute="bottom" id="8AV-Ag-pRg"/>
-                            <constraint firstItem="G5b-HE-WlM" firstAttribute="leading" secondItem="5rf-cK-huG" secondAttribute="leading" id="r4g-Tg-pgP"/>
+                            <constraint firstItem="pXf-4h-hvx" firstAttribute="top" secondItem="M8E-4I-Ibo" secondAttribute="bottom" constant="8" id="ALr-kt-cRu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qNo-V8-baD" secondAttribute="trailing" constant="51" id="QIv-6x-TEM"/>
+                            <constraint firstAttribute="centerX" secondItem="X0u-k2-CDv" secondAttribute="centerX" constant="-1" id="Wbu-m6-ZoF"/>
+                            <constraint firstItem="M8E-4I-Ibo" firstAttribute="leading" secondItem="0Vp-2l-GTm" secondAttribute="leadingMargin" constant="55" id="enz-rO-sez"/>
+                            <constraint firstItem="pXf-4h-hvx" firstAttribute="top" secondItem="qNo-V8-baD" secondAttribute="bottom" constant="8" id="h2u-cR-O3z"/>
+                            <constraint firstItem="5rf-cK-huG" firstAttribute="top" secondItem="pXf-4h-hvx" secondAttribute="bottom" constant="60" id="qic-rE-Zgv"/>
+                            <constraint firstItem="pXf-4h-hvx" firstAttribute="leading" secondItem="0Vp-2l-GTm" secondAttribute="leadingMargin" constant="-16" id="wEj-Vi-vbd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pXf-4h-hvx" secondAttribute="trailing" constant="-16" id="yQy-T0-2Ch"/>
+                            <constraint firstItem="pXf-4h-hvx" firstAttribute="top" secondItem="X0u-k2-CDv" secondAttribute="bottom" constant="8" id="ykn-bW-Wpx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Timer" id="Kgs-YO-BHF">
@@ -147,7 +169,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="timePicker" destination="G5b-HE-WlM" id="jzO-vR-7PN"/>
+                        <outlet property="pickerView" destination="pXf-4h-hvx" id="Uox-PC-qfH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qcb-zc-aX3" userLabel="First Responder" sceneMemberID="firstResponder"/>
