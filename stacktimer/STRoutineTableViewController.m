@@ -152,9 +152,10 @@
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
     // check whether the user pulled down far enough
-    if (self._pullDownInProgress && - self.tableView.contentOffset.y > 20)
+    if (self._pullDownInProgress && - self.tableView.contentOffset.y > 108)
     {
-        NSLog(@"far enough");
+        NSLog(@"far enough %f", self.tableView.contentOffset.y);
+        
     } else {
         NSLog(@"not far enough");
     }
