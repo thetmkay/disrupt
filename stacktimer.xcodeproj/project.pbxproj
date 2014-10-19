@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1782487B19F31F7E00510DA0 /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1782487A19F31F7E00510DA0 /* Timer.m */; };
+		178A8C7519F378690011AC8A /* STAddRoutineWithTimersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 178A8C7419F378690011AC8A /* STAddRoutineWithTimersTableViewController.m */; };
 		17A75C1F19F2B8C70050EA4B /* STModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17A75C1D19F2B8C70050EA4B /* STModel.xcdatamodeld */; };
 		17A75C2119F2BB440050EA4B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A75C2019F2BB440050EA4B /* Foundation.framework */; };
 		17A75C2A19F2BDC80050EA4B /* STRoutine.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A75C2919F2BDC80050EA4B /* STRoutine.m */; };
@@ -58,6 +59,8 @@
 		177590FF19F2AFC700172C1B /* STPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPrefix.pch; sourceTree = "<group>"; };
 		1782487919F31F7E00510DA0 /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
 		1782487A19F31F7E00510DA0 /* Timer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
+		178A8C7319F378690011AC8A /* STAddRoutineWithTimersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STAddRoutineWithTimersTableViewController.h; sourceTree = "<group>"; };
+		178A8C7419F378690011AC8A /* STAddRoutineWithTimersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STAddRoutineWithTimersTableViewController.m; sourceTree = "<group>"; };
 		17A75C1E19F2B8C70050EA4B /* STModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = STModel.xcdatamodel; sourceTree = "<group>"; };
 		17A75C2019F2BB440050EA4B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		17A75C2819F2BDC80050EA4B /* STRoutine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRoutine.h; sourceTree = "<group>"; };
@@ -208,6 +211,8 @@
 		17EA17F919F2A545007C06E4 /* stacktimer */ = {
 			isa = PBXGroup;
 			children = (
+				178A8C7319F378690011AC8A /* STAddRoutineWithTimersTableViewController.h */,
+				178A8C7419F378690011AC8A /* STAddRoutineWithTimersTableViewController.m */,
 				17BE83E019F2DB2600E09902 /* STAddRoutineViewController.h */,
 				17BE83E119F2DB2600E09902 /* STAddRoutineViewController.m */,
 				17A75C2B19F2BDD40050EA4B /* Data and Models */,
@@ -438,6 +443,7 @@
 				17EA17FD19F2A545007C06E4 /* main.m in Sources */,
 				5ECD0AB019F2F72200A168E0 /* YMHTTPClient.m in Sources */,
 				17BE83EF19F305E600E09902 /* STTimerViewController.m in Sources */,
+				178A8C7519F378690011AC8A /* STAddRoutineWithTimersTableViewController.m in Sources */,
 				17BE83EC19F2FD5200E09902 /* STAddTimerViewController.m in Sources */,
 				17BE83DF19F2CE4300E09902 /* STRoutineTableViewController.m in Sources */,
 			);

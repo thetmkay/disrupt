@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "MagicalRecord.h"
 #import <Parse/Parse.h>
+#import "STAddRoutineWithTimersTableViewController.h"
 
 @interface AppDelegate ()
 
@@ -62,6 +63,15 @@
         NSError *e = nil;
         NSData *jsonData = [decoded dataUsingEncoding:NSUTF8StringEncoding];
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData: jsonData options: NSJSONReadingMutableContainers error: &e];
+        
+        STAddRoutineWithTimersTableViewController *viewController = [[STAddRoutineWithTimersTableViewController alloc] init];
+        viewController.routine = json;
+        
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UINavigationController *navigationController = [storyboard instantiateViewControllerWithIdentifier:@"addRoutineWithTimersNav"];
+        ((STAddRoutineWithTimersTableViewController *)navigationController.topViewController).routine = json;
+        navigationController.topViewController.title = json[@"name"];
+        [self.window.rootViewController presentViewController:navigationController animated:YES completion:nil];
         
         NSLog(@"%@",  json);
     }

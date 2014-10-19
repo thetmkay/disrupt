@@ -36,7 +36,9 @@
             localTimer.time = timer.time;
             [localRoutine addTimersObject:localTimer];
         } completion:^(BOOL success, NSError *error) {
-            completionBlock(success);
+            if (completionBlock) {
+                completionBlock(success);
+            }
         }];
     } else {
         completionBlock(NO);
