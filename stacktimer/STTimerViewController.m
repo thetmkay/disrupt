@@ -206,7 +206,7 @@
         STTimerTableViewCell *cell = (STTimerTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
         cell.timerLabel.backgroundColor = [UIColor colorWithRed:.741 green:.925 blue:.714 alpha:1.0];
         cell.timerLabel.delegate = self;
-        
+        [cell.timerLabel reset];
         [cell.timerLabel start];
         
         self.currentIndexPath++;
@@ -229,9 +229,14 @@
         NSLog(@"share to facebook");
     }];
     
+    UIAlertAction *twitterAction = [UIAlertAction actionWithTitle:@"Twitter" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        NSLog(@"share to twitter");
+    }];
+    
     [alertViewController addAction:cancelAction];
     [alertViewController addAction:yammerAction];
     [alertViewController addAction:facebookAction];
+    [alertViewController addAction:twitterAction];
     
     [self presentViewController:alertViewController animated:YES completion:nil];
     
@@ -246,6 +251,7 @@
     self.currentIndexPath = 0;
     STTimerTableViewCell *cell = (STTimerTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
     cell.timerLabel.backgroundColor = [UIColor colorWithRed:.933 green:.988 blue:.925 alpha:1.0];
+    self.isPlayButton = YES;
     [self.tableView reloadData];
 }
 
@@ -256,13 +262,16 @@
     NSIndexPath *indexPath = [[[NSIndexPath alloc] initWithIndex:0] indexPathByAddingIndex:(self.currentIndexPath-1)];
     STTimerTableViewCell *cell = (STTimerTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
     cell.timerLabel.backgroundColor = [UIColor colorWithRed:.933 green:.988 blue:.925 alpha:1.0];
-    [self startNextTimer];
     AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
     if (self.currentIndexPath >= [[[self.fetchedResultsController sections] objectAtIndex:0] numberOfObjects]) {
         [self.startButton setTitle:@"START" forState:UIControlStateNormal];
         self.startButtonItem.title = @"START";
         self.finished = YES;
+        [self resetButtonPressed:self];
+    } else {
+        [self startNextTimer];
     }
+
 }
 
 
@@ -490,6 +499,27 @@
 {
     // Replace this with whatever you want.  This is just an example of handling an error with an alert.
     [self showAlertViewForError:error title:@"Authentication error"];
+}
+
+
+
+
+
+
+
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // The correct way to save (http://samwize.com/2014/03/29/how-to-save-using-magicalrecord/)
+        Timer *timer = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+            Timer *localTimer = [timer MR_inContext:localContext];
+            [localTimer MR_deleteEntity];
+        }];
+    }
+    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new entity and save
+    }
 }
 
 
