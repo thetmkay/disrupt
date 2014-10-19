@@ -15,6 +15,7 @@
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) STRoutine *routineManager;
 @property (strong, nonatomic) NSString *selectedCellTitle;
+@property (nonatomic) BOOL _pullDownInProgress;
 
 @end
 
@@ -122,6 +123,43 @@
     Routine *routine = [self.fetchedResultsController objectAtIndexPath:indexPath];
     self.selectedCellTitle = routine.nameForRoutine;
     [self performSegueWithIdentifier:@"routinesToRoutine" sender:self];
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    NSLog(@"scrollviewbegin");
+    // this behaviour starts when a user pulls down while at the top of the table
+    self._pullDownInProgress = scrollView.contentOffset.y <= 0.0f;
+    if (self._pullDownInProgress)
+    {
+        NSLog(@"add subview");
+    }
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    
+    if (self._pullDownInProgress && self.tableView.contentOffset.y <= 0.0f)
+    {
+        NSLog(@"scrollviewdidscroll");
+    }
+    else
+    {
+        self._pullDownInProgress = false;
+    }
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    // check whether the user pulled down far enough
+    if (self._pullDownInProgress && - self.tableView.contentOffset.y > 20)
+    {
+        NSLog(@"far enough");
+    } else {
+        NSLog(@"not far enough");
+    }
+    
+    self._pullDownInProgress = false;
 }
 
 /*

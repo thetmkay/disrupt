@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MagicalRecord.h"
+#import <Parse/Parse.h>
 
 @interface AppDelegate ()
 
@@ -19,6 +20,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"STModel.sqlite"];
+    [Parse setApplicationId:@"TpudbmSzk74NMI1GBDfs4FJq4E5Tk4MbJ4kgb5rR"
+                  clientKey:@"5XjZBAq5aQMNUoNjGF3BtcDdnCxVjw44FVz76zJ3"];
     return YES;
 }
 
@@ -43,6 +46,25 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     [MagicalRecord cleanUp];
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    
+    NSLog(@"url recieved: %@", url);
+    NSLog(@"host: %@", [url host]);
+    
+    if([[url host] isEqualToString:@"oauth.redirect.yammer"]) {
+        if ([[YMLoginController sharedInstance] handleLoginRedirectFromUrl:url sourceApplication:sourceApplication])
+            return YES;
+    } else if ([[url host] isEqualToString:@"add.timer"]) {
+        NSLog(@"add timer called");
+    }
+    
+    // If we arrive here it means the login was successful, so now let's get the authToken to be used on all subsequent requests
+    
+    
+    // URL was not a match, or came from an application other than Safari
+    return NO;
 }
 
 @end

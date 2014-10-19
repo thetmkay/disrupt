@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YMLoginController.h"
+
+@class STAPIController;
+@class YMLoginController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property (strong, nonatomic) STAPIController *apiController;
 
 @end
 

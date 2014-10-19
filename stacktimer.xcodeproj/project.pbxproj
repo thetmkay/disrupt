@@ -23,6 +23,20 @@
 		17EA180819F2A545007C06E4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17EA180719F2A545007C06E4 /* Images.xcassets */; };
 		17EA180B19F2A545007C06E4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17EA180919F2A545007C06E4 /* LaunchScreen.xib */; };
 		17EA181719F2A545007C06E4 /* stacktimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EA181619F2A545007C06E4 /* stacktimerTests.m */; };
+		5E177E6819F2FD1800EB095F /* STAPIController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E177E6719F2FD1800EB095F /* STAPIController.m */; };
+		5E177E7519F327BB00EB095F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E177E7419F327BB00EB095F /* AudioToolbox.framework */; };
+		5E177E7719F327C300EB095F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E177E7619F327C300EB095F /* CFNetwork.framework */; };
+		5E177E7919F327CB00EB095F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E177E7819F327CB00EB095F /* CoreGraphics.framework */; };
+		5E177E7B19F327D200EB095F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E177E7A19F327D200EB095F /* CoreLocation.framework */; };
+		5E177E7D19F327E500EB095F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E177E7C19F327E500EB095F /* libz.dylib */; };
+		5E177E7F19F327F000EB095F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E177E7E19F327F000EB095F /* MobileCoreServices.framework */; };
+		5E177E8119F327FD00EB095F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E177E8019F327FD00EB095F /* Security.framework */; };
+		5E177E8319F3280600EB095F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E177E8219F3280600EB095F /* StoreKit.framework */; };
+		5E177E8519F3280E00EB095F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E177E8419F3280E00EB095F /* SystemConfiguration.framework */; };
+		5ECD0AAE19F2F72200A168E0 /* NSURL+YMQueryParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECD0AA719F2F72200A168E0 /* NSURL+YMQueryParameters.m */; };
+		5ECD0AAF19F2F72200A168E0 /* YMConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECD0AA919F2F72200A168E0 /* YMConstants.m */; };
+		5ECD0AB019F2F72200A168E0 /* YMHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECD0AAB19F2F72200A168E0 /* YMHTTPClient.m */; };
+		5ECD0AB119F2F72200A168E0 /* YMLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECD0AAD19F2F72200A168E0 /* YMLoginController.m */; };
 		B6457105E63A73043B9C575A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C75FFCBF45B655979AC780DD /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +83,25 @@
 		2720589B70DB7FB67FFF9E06 /* Pods-stacktimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stacktimer.release.xcconfig"; path = "Pods/Target Support Files/Pods-stacktimer/Pods-stacktimer.release.xcconfig"; sourceTree = "<group>"; };
 		343A9D2752B5B22CEFAB7D93 /* libPods-stacktimer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-stacktimer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4358066D42FD3B71401C33A9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		5E177E6719F2FD1800EB095F /* STAPIController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STAPIController.m; sourceTree = "<group>"; };
+		5E177E6919F2FD7800EB095F /* STAPIController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STAPIController.h; sourceTree = "<group>"; };
+		5E177E7419F327BB00EB095F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		5E177E7619F327C300EB095F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		5E177E7819F327CB00EB095F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5E177E7A19F327D200EB095F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		5E177E7C19F327E500EB095F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		5E177E7E19F327F000EB095F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		5E177E8019F327FD00EB095F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		5E177E8219F3280600EB095F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		5E177E8419F3280E00EB095F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		5ECD0AA619F2F72200A168E0 /* NSURL+YMQueryParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+YMQueryParameters.h"; sourceTree = "<group>"; };
+		5ECD0AA719F2F72200A168E0 /* NSURL+YMQueryParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+YMQueryParameters.m"; sourceTree = "<group>"; };
+		5ECD0AA819F2F72200A168E0 /* YMConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMConstants.h; sourceTree = "<group>"; };
+		5ECD0AA919F2F72200A168E0 /* YMConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMConstants.m; sourceTree = "<group>"; };
+		5ECD0AAA19F2F72200A168E0 /* YMHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMHTTPClient.h; sourceTree = "<group>"; };
+		5ECD0AAB19F2F72200A168E0 /* YMHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMHTTPClient.m; sourceTree = "<group>"; };
+		5ECD0AAC19F2F72200A168E0 /* YMLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMLoginController.h; sourceTree = "<group>"; };
+		5ECD0AAD19F2F72200A168E0 /* YMLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMLoginController.m; sourceTree = "<group>"; };
 		BEF2EAC53CB2971FA4A6D13A /* Pods-stacktimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stacktimer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-stacktimer/Pods-stacktimer.debug.xcconfig"; sourceTree = "<group>"; };
 		C75FFCBF45B655979AC780DD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD03B6B54FB805EBFF989BA1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -79,6 +112,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E177E8519F3280E00EB095F /* SystemConfiguration.framework in Frameworks */,
+				5E177E8319F3280600EB095F /* StoreKit.framework in Frameworks */,
+				5E177E8119F327FD00EB095F /* Security.framework in Frameworks */,
+				5E177E7F19F327F000EB095F /* MobileCoreServices.framework in Frameworks */,
+				5E177E7D19F327E500EB095F /* libz.dylib in Frameworks */,
+				5E177E7B19F327D200EB095F /* CoreLocation.framework in Frameworks */,
+				5E177E7919F327CB00EB095F /* CoreGraphics.framework in Frameworks */,
+				5E177E7719F327C300EB095F /* CFNetwork.framework in Frameworks */,
+				5E177E7519F327BB00EB095F /* AudioToolbox.framework in Frameworks */,
 				17BE83E419F2E9D600E09902 /* QuartzCore.framework in Frameworks */,
 				17A75C2119F2BB440050EA4B /* Foundation.framework in Frameworks */,
 				B6457105E63A73043B9C575A /* libPods.a in Frameworks */,
@@ -98,6 +140,15 @@
 		041A822750785A1D96DAA73B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5E177E8419F3280E00EB095F /* SystemConfiguration.framework */,
+				5E177E8219F3280600EB095F /* StoreKit.framework */,
+				5E177E8019F327FD00EB095F /* Security.framework */,
+				5E177E7E19F327F000EB095F /* MobileCoreServices.framework */,
+				5E177E7C19F327E500EB095F /* libz.dylib */,
+				5E177E7A19F327D200EB095F /* CoreLocation.framework */,
+				5E177E7819F327CB00EB095F /* CoreGraphics.framework */,
+				5E177E7619F327C300EB095F /* CFNetwork.framework */,
+				5E177E7419F327BB00EB095F /* AudioToolbox.framework */,
 				17BE83E319F2E9D600E09902 /* QuartzCore.framework */,
 				17A75C2019F2BB440050EA4B /* Foundation.framework */,
 				343A9D2752B5B22CEFAB7D93 /* libPods-stacktimer.a */,
@@ -146,8 +197,11 @@
 				17BE83E019F2DB2600E09902 /* STAddRoutineViewController.h */,
 				17BE83E119F2DB2600E09902 /* STAddRoutineViewController.m */,
 				17A75C2B19F2BDD40050EA4B /* Data and Models */,
+				5ECD0AA519F2F72200A168E0 /* OAuthSDK */,
 				17EA17FE19F2A545007C06E4 /* AppDelegate.h */,
 				17EA17FF19F2A545007C06E4 /* AppDelegate.m */,
+				5E177E6919F2FD7800EB095F /* STAPIController.h */,
+				5E177E6719F2FD1800EB095F /* STAPIController.m */,
 				17EA180119F2A545007C06E4 /* ViewController.h */,
 				17EA180219F2A545007C06E4 /* ViewController.m */,
 				17EA180419F2A545007C06E4 /* Main.storyboard */,
@@ -187,6 +241,21 @@
 				17EA181519F2A545007C06E4 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5ECD0AA519F2F72200A168E0 /* OAuthSDK */ = {
+			isa = PBXGroup;
+			children = (
+				5ECD0AA619F2F72200A168E0 /* NSURL+YMQueryParameters.h */,
+				5ECD0AA719F2F72200A168E0 /* NSURL+YMQueryParameters.m */,
+				5ECD0AA819F2F72200A168E0 /* YMConstants.h */,
+				5ECD0AA919F2F72200A168E0 /* YMConstants.m */,
+				5ECD0AAA19F2F72200A168E0 /* YMHTTPClient.h */,
+				5ECD0AAB19F2F72200A168E0 /* YMHTTPClient.m */,
+				5ECD0AAC19F2F72200A168E0 /* YMLoginController.h */,
+				5ECD0AAD19F2F72200A168E0 /* YMLoginController.m */,
+			);
+			path = OAuthSDK;
 			sourceTree = "<group>";
 		};
 		E10DBBFA0561FF3453B8DF45 /* Pods */ = {
@@ -339,11 +408,16 @@
 				17A75C1F19F2B8C70050EA4B /* STModel.xcdatamodeld in Sources */,
 				17EA180319F2A545007C06E4 /* ViewController.m in Sources */,
 				17EA180019F2A545007C06E4 /* AppDelegate.m in Sources */,
+				5ECD0AAE19F2F72200A168E0 /* NSURL+YMQueryParameters.m in Sources */,
 				17BE83DC19F2C37000E09902 /* Timer.m in Sources */,
 				17A75C2A19F2BDC80050EA4B /* STRoutine.m in Sources */,
 				17BE83D919F2C36F00E09902 /* Routine.m in Sources */,
+				5ECD0AAF19F2F72200A168E0 /* YMConstants.m in Sources */,
 				17BE83E219F2DB2600E09902 /* STAddRoutineViewController.m in Sources */,
+				5ECD0AB119F2F72200A168E0 /* YMLoginController.m in Sources */,
+				5E177E6819F2FD1800EB095F /* STAPIController.m in Sources */,
 				17EA17FD19F2A545007C06E4 /* main.m in Sources */,
+				5ECD0AB019F2F72200A168E0 /* YMHTTPClient.m in Sources */,
 				1751DD6B19F2A9090020BB6A /* STRoutineTableView.m in Sources */,
 				17BE83DF19F2CE4300E09902 /* STRoutineTableViewController.m in Sources */,
 			);
