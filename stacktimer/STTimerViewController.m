@@ -18,6 +18,9 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic) NSInteger currentIndexPath;
+@property (weak, nonatomic) IBOutlet UIButton *startButton;
+@property (nonatomic) BOOL paused;
+@property (nonatomic) BOOL finished;
 
 @end
 
@@ -137,6 +140,37 @@
 #pragma mark - buttons
 
 - (IBAction)startPressed:(id)sender {
+    if ([self.startButton.titleLabel.text isEqualToString:@"Start"]) {
+        if (self.finished) {
+            [self resetButtonPressed:self];
+        }
+        if (self.paused) {
+            [self unPause];
+        } else {
+            [self startNextTimer];
+        }
+        [self.startButton setTitle:@"Pause" forState:UIControlStateNormal];
+    } else {
+        [self pauseTimer];
+        [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
+    }
+}
+
+- (void)pauseTimer {
+    NSIndexPath *indexPath = [[[NSIndexPath alloc] initWithIndex:0] indexPathByAddingIndex:self.currentIndexPath - 1];
+    STTimerTableViewCell *cell = (STTimerTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+    [cell.timerLabel pause];
+    self.paused = YES;
+}
+
+- (void)unPause {
+    NSIndexPath *indexPath = [[[NSIndexPath alloc] initWithIndex:0] indexPathByAddingIndex:self.currentIndexPath - 1];
+    STTimerTableViewCell *cell = (STTimerTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+    [cell.timerLabel start];
+    self.paused = NO;
+}
+
+- (void)startNextTimer {
     if (self.currentIndexPath >= 0 && self.currentIndexPath < [[[self.fetchedResultsController sections] objectAtIndex:0] numberOfObjects]) {
         NSIndexPath *indexPath = [[[NSIndexPath alloc] initWithIndex:0] indexPathByAddingIndex:self.currentIndexPath];
         STTimerTableViewCell *cell = (STTimerTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
@@ -146,10 +180,22 @@
     }
 }
 
+- (IBAction)resetButtonPressed:(id)sender {
+    self.paused = NO;
+    self.currentIndexPath = 0;
+    self.finished = NO;
+    [self.tableView reloadData];
+}
+
+
 #pragma mark - timer delegate
 
 - (void)timerLabel:(MZTimerLabel *)timerLabel finshedCountDownTimerWithTime:(NSTimeInterval)countTime {
-    [self startPressed:self];
+    [self startNextTimer];
+    if (self.currentIndexPath >= [[[self.fetchedResultsController sections] objectAtIndex:0] numberOfObjects]) {
+        [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
+        self.finished = YES;
+    }
 }
 
 #pragma mark - Navigation

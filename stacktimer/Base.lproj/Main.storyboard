@@ -222,6 +222,9 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="resetButtonPressed:" destination="1el-Q3-07L" eventType="touchUpInside" id="zH4-CS-jSL"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qhR-zL-jag">
                                 <rect key="frame" x="8" y="72" width="576" height="452"/>
@@ -282,6 +285,7 @@
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="startButton" destination="Q8u-oU-VBl" id="3kz-KD-GWs"/>
                         <outlet property="tableView" destination="qhR-zL-jag" id="6I5-j4-akv"/>
                         <segue destination="10U-eI-B3w" kind="presentation" identifier="addTimerSegue" id="UZ3-en-pBr"/>
                     </connections>
