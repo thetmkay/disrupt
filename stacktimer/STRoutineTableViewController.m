@@ -37,6 +37,8 @@
     }
     
     self.tableView.delegate = self;
+    
+ 
 }
 
 - (NSFetchedResultsController *)fetchedResultsController {
@@ -69,6 +71,12 @@
     
     // Configure the cell...]
     [self configureCell:cell atIndexPath:indexPath];
+    
+    if (indexPath.row % 2 == 0) {
+        cell.backgroundColor = [UIColor colorWithRed:0.969 green:0.984 blue:0.992 alpha:1];
+    } else {
+        cell.backgroundColor = [UIColor whiteColor];
+    }
     
     return cell;
 }

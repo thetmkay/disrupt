@@ -29,6 +29,8 @@
 @property (nonatomic) BOOL paused;
 @property (nonatomic) BOOL finished;
 @property (nonatomic) BOOL attemptingSampleAPICall;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *startButtonItem;
+@property (nonatomic) BOOL isPlayButton;
 
 @end
 
@@ -41,7 +43,9 @@
     self.tableView.dataSource = self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.attemptingSampleAPICall = NO;
+    self.isPlayButton = YES;
 
+    [self.startButtonItem setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Thin" size:40.0f]} forState:UIControlStateNormal];
     
     NSError *error;
     if (![self.fetchedResultsController performFetch:&error]) {
@@ -89,6 +93,7 @@
     Timer *timer = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.timerLabel.timerType = MZTimerLabelTypeTimer;
     cell.time = (int)([timer.time integerValue] / 1000);
+    cell.timerLabel.timeFormat = @"HH:mm:ss.S";
     [cell.timerLabel setCountDownTime:cell.time];
 }
 
@@ -97,7 +102,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 80;
+    return 100;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
@@ -158,7 +163,7 @@
 #pragma mark - buttons
 
 - (IBAction)startPressed:(id)sender {
-    if ([self.startButton.titleLabel.text isEqualToString:@"Start"]) {
+    if (self.isPlayButton) {
         if (self.finished) {
             [self resetButtonPressed:self];
         }
@@ -167,10 +172,16 @@
         } else {
             [self startNextTimer];
         }
-        [self.startButton setTitle:@"Pause" forState:UIControlStateNormal];
+        [self.startButton setTitle:@"PAUSE" forState:UIControlStateNormal];
+//        self.startButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPause target:self action:@selector(startPressed:)];
+        self.isPlayButton = NO;
+        self.startButtonItem.title = @"PAUSE";
     } else {
         [self pauseTimer];
-        [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
+        [self.startButton setTitle:@"START" forState:UIControlStateNormal];
+//        self.startButtonItem.style = UIBarButtonSystemItemPlay;
+        self.startButtonItem.title = @"START";
+        self.isPlayButton = YES;
     }
 }
 
@@ -237,7 +248,8 @@
     [self startNextTimer];
     AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
     if (self.currentIndexPath >= [[[self.fetchedResultsController sections] objectAtIndex:0] numberOfObjects]) {
-        [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
+        [self.startButton setTitle:@"START" forState:UIControlStateNormal];
+        self.startButtonItem.title = @"START";
         self.finished = YES;
     }
 }

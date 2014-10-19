@@ -23,6 +23,12 @@
                   clientKey:@"5XjZBAq5aQMNUoNjGF3BtcDdnCxVjw44FVz76zJ3"];
     // Override point for customization after application launch.
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"STModel.sqlite"];
+    [application setStatusBarStyle:UIStatusBarStyleLightContent];
+    NSLog(@"%@", [UIFont fontNamesForFamilyName:@"Helvetica Neue"]);
+    [[UINavigationBar appearance] setTitleTextAttributes: @{
+                                                            NSForegroundColorAttributeName: [UIColor whiteColor],
+                                                            NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Bold" size:21.0f]
+                                                            }];
     return YES;
 }
 
