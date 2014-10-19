@@ -204,6 +204,7 @@
         NSIndexPath *indexPath = [[[NSIndexPath alloc] initWithIndex:0] indexPathByAddingIndex:self.currentIndexPath];
         STTimerTableViewCell *cell = (STTimerTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
         cell.timerLabel.delegate = self;
+        [cell.timerLabel reset];
         [cell.timerLabel start];
         self.currentIndexPath++;
     }
@@ -225,9 +226,14 @@
         NSLog(@"share to facebook");
     }];
     
+    UIAlertAction *twitterAction = [UIAlertAction actionWithTitle:@"Twitter" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        NSLog(@"share to twitter");
+    }];
+    
     [alertViewController addAction:cancelAction];
     [alertViewController addAction:yammerAction];
     [alertViewController addAction:facebookAction];
+    [alertViewController addAction:twitterAction];
     
     [self presentViewController:alertViewController animated:YES completion:nil];
     
@@ -238,6 +244,7 @@
     self.paused = NO;
     self.currentIndexPath = 0;
     self.finished = NO;
+    self.isPlayButton = YES;
     [self.tableView reloadData];
 }
 
@@ -245,13 +252,16 @@
 #pragma mark - timer delegate
 
 - (void)timerLabel:(MZTimerLabel *)timerLabel finshedCountDownTimerWithTime:(NSTimeInterval)countTime {
-    [self startNextTimer];
     AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
     if (self.currentIndexPath >= [[[self.fetchedResultsController sections] objectAtIndex:0] numberOfObjects]) {
         [self.startButton setTitle:@"START" forState:UIControlStateNormal];
         self.startButtonItem.title = @"START";
         self.finished = YES;
+        [self resetButtonPressed:self];
+    } else {
+        [self startNextTimer];
     }
+
 }
 
 #pragma mark - Navigation
@@ -477,6 +487,27 @@
 {
     // Replace this with whatever you want.  This is just an example of handling an error with an alert.
     [self showAlertViewForError:error title:@"Authentication error"];
+}
+
+
+
+
+
+
+
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // The correct way to save (http://samwize.com/2014/03/29/how-to-save-using-magicalrecord/)
+        Timer *timer = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+            Timer *localTimer = [timer MR_inContext:localContext];
+            [localTimer MR_deleteEntity];
+        }];
+    }
+    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new entity and save
+    }
 }
 
 

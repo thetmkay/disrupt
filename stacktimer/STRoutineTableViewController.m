@@ -205,6 +205,20 @@
 }
 */
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // The correct way to save (http://samwize.com/2014/03/29/how-to-save-using-magicalrecord/)
+        Routine *routine = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+            Routine *localRoutine = [routine MR_inContext:localContext];
+            [localRoutine MR_deleteEntity];
+        }];
+    }
+    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new entity and save
+    }
+}
+
 
 #pragma mark - Navigation
 

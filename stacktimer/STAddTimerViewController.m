@@ -12,11 +12,11 @@
 
 @interface STAddTimerViewController () <UIPickerViewDataSource, UIPickerViewDelegate>
 
-@property (weak, nonatomic)  UIDatePicker *timePicker;
 @property(retain, nonatomic) IBOutlet UIPickerView *pickerView;
 @property(retain, nonatomic) NSMutableArray *hoursArray;
 @property(retain, nonatomic) NSMutableArray *minsArray;
 @property(retain, nonatomic) NSMutableArray *secsArray;
+@property (weak, nonatomic) IBOutlet UIPickerView *actionPicker;
 
 @end
 
@@ -27,6 +27,8 @@
     // Do any additional setup after loading the view.
     self.pickerView.dataSource = self;
     self.pickerView.delegate = self;
+    self.actionPicker.dataSource = self;
+    self.actionPicker.delegate = self;
     [self setupArrays];
 }
 
@@ -37,14 +39,14 @@
     self.secsArray = [[NSMutableArray alloc] init];
     NSString *strVal = [[NSString alloc] init];
     
-    for(int i=0; i<61; i++)
+    for(int i=0; i<60; i++)
     {
         strVal = [NSString stringWithFormat:@"%d", i];
         
         //NSLog(@"strVal: %@", strVal);
         
         //Create array with 0-12 hours
-        if (i < 13)
+        if (i < 25)
         {
             [self.hoursArray addObject:strVal];
         }
@@ -61,43 +63,65 @@
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    return 3;
+    if ([self.pickerView isEqual:pickerView]) {
+        return 3;
+    } else {
+        return 1;
+    }
 }
 
 // Method to define the numberOfRows in a component using the array.
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent :(NSInteger)component
 {
-    if (component==0)
-    {
-        return [self.hoursArray count];
+    if ([self.pickerView isEqual:pickerView]) {
+        if (component==0)
+        {
+            return [self.hoursArray count];
+        }
+        else if (component==1)
+        {
+            return [self.minsArray count];
+        }
+        else
+        {
+            return [self.secsArray count];
+        }
+    } else {
+        return 2;
     }
-    else if (component==1)
-    {
-        return [self.minsArray count];
-    }
-    else
-    {
-        return [self.secsArray count];
-    }
+    
     
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    switch (component) {
-        case 0:
-            return [self.hoursArray objectAtIndex:row];
-            break;
-            
-        case 1:
-            return [self.minsArray objectAtIndex:row];
-            
-        case 2:
-            return [self.secsArray objectAtIndex:row];
-            
-        default:
-            return @"how did you call this?";
-            break;
+    if ([self.pickerView isEqual:pickerView]) {
+        switch (component) {
+            case 0:
+                return [self.hoursArray objectAtIndex:row];
+                break;
+                
+            case 1:
+                return [self.minsArray objectAtIndex:row];
+                
+            case 2:
+                return [self.secsArray objectAtIndex:row];
+                
+            default:
+                return @"how did you call this?";
+                break;
+        }
+    } else {
+        switch (row) {
+            case 0:
+                return @"beep";
+                break;
+                
+            default:
+                return @"nothing";
+                break;
+        }
     }
+    
 }
 
 - (IBAction)cancelButtonPressed:(id)sender {
