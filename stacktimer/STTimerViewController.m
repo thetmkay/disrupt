@@ -102,6 +102,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     return 100;
 }
 
@@ -203,8 +204,11 @@
     if (self.currentIndexPath >= 0 && self.currentIndexPath < [[[self.fetchedResultsController sections] objectAtIndex:0] numberOfObjects]) {
         NSIndexPath *indexPath = [[[NSIndexPath alloc] initWithIndex:0] indexPathByAddingIndex:self.currentIndexPath];
         STTimerTableViewCell *cell = (STTimerTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+        cell.timerLabel.backgroundColor = [UIColor colorWithRed:.741 green:.925 blue:.714 alpha:1.0];
         cell.timerLabel.delegate = self;
+        
         [cell.timerLabel start];
+        
         self.currentIndexPath++;
     }
 }
@@ -236,8 +240,12 @@
 
 - (IBAction)resetButtonPressed:(id)sender {
     self.paused = NO;
-    self.currentIndexPath = 0;
     self.finished = NO;
+    NSLog(@"reset %ld", self.currentIndexPath);
+    NSIndexPath *indexPath = [[[NSIndexPath alloc] initWithIndex:0] indexPathByAddingIndex:(self.currentIndexPath-1)];
+    self.currentIndexPath = 0;
+    STTimerTableViewCell *cell = (STTimerTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+    cell.timerLabel.backgroundColor = [UIColor colorWithRed:.933 green:.988 blue:.925 alpha:1.0];
     [self.tableView reloadData];
 }
 
@@ -245,6 +253,9 @@
 #pragma mark - timer delegate
 
 - (void)timerLabel:(MZTimerLabel *)timerLabel finshedCountDownTimerWithTime:(NSTimeInterval)countTime {
+    NSIndexPath *indexPath = [[[NSIndexPath alloc] initWithIndex:0] indexPathByAddingIndex:(self.currentIndexPath-1)];
+    STTimerTableViewCell *cell = (STTimerTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+    cell.timerLabel.backgroundColor = [UIColor colorWithRed:.933 green:.988 blue:.925 alpha:1.0];
     [self startNextTimer];
     AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
     if (self.currentIndexPath >= [[[self.fetchedResultsController sections] objectAtIndex:0] numberOfObjects]) {
@@ -253,6 +264,8 @@
         self.finished = YES;
     }
 }
+
+
 
 #pragma mark - Navigation
 
