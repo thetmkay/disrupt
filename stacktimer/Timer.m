@@ -13,6 +13,7 @@
 @implementation Timer
 
 @dynamic actionOnCompletion;
+@dynamic position;
 @dynamic time;
 @dynamic routine;
 

@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "MagicalRecord.h"
-#import <Parse/Parse.h>
 
 @interface AppDelegate ()
 
@@ -20,8 +19,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"STModel.sqlite"];
-    [Parse setApplicationId:@"TpudbmSzk74NMI1GBDfs4FJq4E5Tk4MbJ4kgb5rR"
-                  clientKey:@"5XjZBAq5aQMNUoNjGF3BtcDdnCxVjw44FVz76zJ3"];
     return YES;
 }
 

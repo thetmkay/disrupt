@@ -1,5 +1,5 @@
 //
-//  STRoutineTableView.h
+//  STTimerViewController.h
 //  stacktimer
 //
 //  Created by Niket Shah on 18/10/2014.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface STRoutineTableView : UITableView
+@interface STTimerViewController : UIViewController
 
 @end

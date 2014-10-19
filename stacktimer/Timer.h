@@ -14,6 +14,7 @@
 @interface Timer : NSManagedObject
 
 @property (nonatomic, retain) NSString * actionOnCompletion;
+@property (nonatomic, retain) NSString * position;
 @property (nonatomic, retain) NSString * time;
 @property (nonatomic, retain) Routine *routine;
 

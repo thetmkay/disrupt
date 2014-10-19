@@ -6,11 +6,12 @@
     </entity>
     <entity name="Timer" representedClassName="Timer" syncable="YES">
         <attribute name="actionOnCompletion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="position" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="routine" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Routine" inverseName="timers" inverseEntity="Routine" syncable="YES"/>
     </entity>
     <elements>
         <element name="Routine" positionX="-54" positionY="99" width="128" height="75"/>
-        <element name="Timer" positionX="-63" positionY="-18" width="128" height="58"/>
+        <element name="Timer" positionX="-63" positionY="-18" width="128" height="105"/>
     </elements>
 </model>
