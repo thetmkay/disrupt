@@ -93,10 +93,71 @@
             </objects>
             <point key="canvasLocation" x="1885" y="-124"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Sf0-r1-cQb">
+            <objects>
+                <navigationController id="10U-eI-B3w" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CRn-ZS-pD6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="lDd-0h-g5e" kind="relationship" relationship="rootViewController" id="QIy-L7-j0l"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uW6-uO-RhA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2123" y="567"/>
+        </scene>
+        <!--Add Timer-->
+        <scene sceneID="8ep-Sf-sVa">
+            <objects>
+                <viewController id="lDd-0h-g5e" customClass="STAddTimerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PJa-yG-NnF"/>
+                        <viewControllerLayoutGuide type="bottom" id="5rf-cK-huG"/>
+                    </layoutGuides>
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="0Vp-2l-GTm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="G5b-HE-WlM">
+                                <rect key="frame" x="0.0" y="394" width="320" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="435354816.97182202">
+                                    <!--2014-10-18 19:53:36 +0000-->
+                                </date>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5rf-cK-huG" firstAttribute="top" secondItem="G5b-HE-WlM" secondAttribute="bottom" id="8AV-Ag-pRg"/>
+                            <constraint firstItem="G5b-HE-WlM" firstAttribute="leading" secondItem="5rf-cK-huG" secondAttribute="leading" id="r4g-Tg-pgP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Timer" id="Kgs-YO-BHF">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="zVu-52-vUJ">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="lDd-0h-g5e" id="w9o-u5-tDf"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="q70-pR-hqD">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="lDd-0h-g5e" id="IXI-mt-npU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="timePicker" destination="G5b-HE-WlM" id="jzO-vR-7PN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qcb-zc-aX3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2872" y="216"/>
+        </scene>
         <!--Routine-->
         <scene sceneID="8tv-YH-jsT">
             <objects>
-                <viewController title="Routine" id="1el-Q3-07L" sceneMemberID="viewController">
+                <viewController title="Routine" id="1el-Q3-07L" customClass="STTimerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3R-5f-2cC"/>
                         <viewControllerLayoutGuide type="bottom" id="LZf-JW-aKb"/>
@@ -109,7 +170,8 @@
                                 <rect key="frame" x="16" y="532" width="280" height="48"/>
                                 <color key="backgroundColor" red="0.5062640069235973" green="0.97255760732323238" blue="0.3327798044968957" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="280" id="t6t-oC-cdJ"/>
+                                    <constraint firstAttribute="width" constant="280" id="Oc2-76-iEk"/>
+                                    <constraint firstAttribute="height" constant="48" id="qEh-Pu-jnu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -121,6 +183,9 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="startPressed:" destination="1el-Q3-07L" eventType="touchUpInside" id="LM5-wU-lgL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cnX-s0-p4V">
                                 <rect key="frame" x="304" y="532" width="280" height="48"/>
@@ -136,37 +201,78 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qhR-zL-jag">
-                                <rect key="frame" x="0.0" y="20" width="600" height="504"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qhR-zL-jag">
+                                <rect key="frame" x="8" y="72" width="576" height="452"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="timerCell" id="N9P-Kb-TMo" customClass="STTimerTableViewCell">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N9P-Kb-TMo" id="UUA-NI-0lU">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQx-KC-5EW" customClass="MZTimerLabel">
+                                                    <rect key="frame" x="267" y="19" width="42" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Routine: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHI-ZU-CLC">
+                                                    <rect key="frame" x="8" y="19" width="69" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerX" secondItem="vQx-KC-5EW" secondAttribute="centerX" id="LeW-N1-zPv"/>
+                                                <constraint firstAttribute="centerY" secondItem="vQx-KC-5EW" secondAttribute="centerY" id="gLT-f2-eEf"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="timerLabel" destination="vQx-KC-5EW" id="yAZ-QN-Cnv"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="cnX-s0-p4V" firstAttribute="leading" secondItem="Q8u-oU-VBl" secondAttribute="trailing" constant="8" symbolic="YES" id="1Is-9C-GZH"/>
-                            <constraint firstItem="LZf-JW-aKb" firstAttribute="top" secondItem="qhR-zL-jag" secondAttribute="bottom" constant="76" id="7hu-Rj-rg9"/>
-                            <constraint firstItem="qhR-zL-jag" firstAttribute="top" secondItem="BVA-NF-Yry" secondAttribute="topMargin" constant="20" id="Iuu-ta-KdY"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="qhR-zL-jag" secondAttribute="trailing" constant="-16" id="UPK-bE-A90"/>
-                            <constraint firstItem="Q8u-oU-VBl" firstAttribute="leading" secondItem="BVA-NF-Yry" secondAttribute="leadingMargin" id="dob-9R-MJt"/>
-                            <constraint firstAttribute="bottom" secondItem="cnX-s0-p4V" secondAttribute="bottom" constant="20" symbolic="YES" id="jrH-6w-vnC"/>
-                            <constraint firstItem="cnX-s0-p4V" firstAttribute="trailing" secondItem="BVA-NF-Yry" secondAttribute="trailingMargin" id="mXS-j8-oCB"/>
-                            <constraint firstItem="cnX-s0-p4V" firstAttribute="baseline" secondItem="Q8u-oU-VBl" secondAttribute="firstBaseline" id="oeT-D1-4pX"/>
-                            <constraint firstItem="cnX-s0-p4V" firstAttribute="top" secondItem="qhR-zL-jag" secondAttribute="bottom" constant="8" symbolic="YES" id="rZj-2A-xoA"/>
-                            <constraint firstItem="cnX-s0-p4V" firstAttribute="top" secondItem="Q8u-oU-VBl" secondAttribute="top" id="uzy-Uh-KyN"/>
-                            <constraint firstItem="qhR-zL-jag" firstAttribute="leading" secondItem="BVA-NF-Yry" secondAttribute="leadingMargin" constant="-16" id="vwG-dj-ExF"/>
-                            <constraint firstItem="cnX-s0-p4V" firstAttribute="firstBaseline" secondItem="Q8u-oU-VBl" secondAttribute="baseline" id="yD9-20-bVh"/>
+                            <constraint firstItem="Q8u-oU-VBl" firstAttribute="baseline" secondItem="cnX-s0-p4V" secondAttribute="firstBaseline" id="9gt-vh-OxI"/>
+                            <constraint firstItem="LZf-JW-aKb" firstAttribute="top" secondItem="qhR-zL-jag" secondAttribute="bottom" constant="76" id="DDi-hj-rPy"/>
+                            <constraint firstItem="Q8u-oU-VBl" firstAttribute="leading" secondItem="BVA-NF-Yry" secondAttribute="leadingMargin" id="HjV-5m-USR"/>
+                            <constraint firstItem="qhR-zL-jag" firstAttribute="leading" secondItem="BVA-NF-Yry" secondAttribute="leadingMargin" constant="-8" id="Sqw-qW-Z6K"/>
+                            <constraint firstAttribute="bottom" secondItem="Q8u-oU-VBl" secondAttribute="bottom" constant="20" symbolic="YES" id="aJI-AW-Jr3"/>
+                            <constraint firstItem="Q8u-oU-VBl" firstAttribute="top" secondItem="cnX-s0-p4V" secondAttribute="top" id="bX6-hQ-Xcm"/>
+                            <constraint firstItem="qhR-zL-jag" firstAttribute="top" secondItem="y3R-5f-2cC" secondAttribute="bottom" constant="8" id="c4d-U1-19U"/>
+                            <constraint firstItem="cnX-s0-p4V" firstAttribute="leading" secondItem="Q8u-oU-VBl" secondAttribute="trailing" constant="8" symbolic="YES" id="eoO-Br-EUd"/>
+                            <constraint firstItem="cnX-s0-p4V" firstAttribute="trailing" secondItem="BVA-NF-Yry" secondAttribute="trailingMargin" id="vId-cM-sHY"/>
+                            <constraint firstItem="cnX-s0-p4V" firstAttribute="baseline" secondItem="Q8u-oU-VBl" secondAttribute="firstBaseline" id="xcb-pb-g9J"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qhR-zL-jag" secondAttribute="trailing" id="xdk-dW-nGw"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Routine" id="F2V-bR-vmd">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Kv6-FO-6SI">
+                            <connections>
+                                <action selector="addTimerButtonPressed:" destination="1el-Q3-07L" id="V1R-Ql-tM1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="qhR-zL-jag" id="6I5-j4-akv"/>
+                        <segue destination="10U-eI-B3w" kind="presentation" identifier="addTimerSegue" id="UZ3-en-pBr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zV4-qF-RuS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1331" y="792"/>
+            <point key="canvasLocation" x="1399" y="824"/>
         </scene>
         <!--Routines-->
         <scene sceneID="xwr-R5-LNE">
             <objects>
                 <tableViewController id="Sf3-ND-bHR" customClass="STRoutineTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="57" sectionHeaderHeight="22" sectionFooterHeight="22" id="Gdp-K1-f1C">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="57" sectionHeaderHeight="2" sectionFooterHeight="13" id="Gdp-K1-f1C">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

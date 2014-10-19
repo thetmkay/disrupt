@@ -31,7 +31,9 @@
     if (routine) {
         [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
             Routine *localRoutine = [routine MR_inContext:localContext];
-            Timer *localTimer = [timer MR_inContext:localContext];
+            Timer *localTimer = [Timer MR_createInContext:localContext];
+            localTimer.position = [NSString stringWithFormat:@"%lu", localRoutine.timers.count + 1];
+            localTimer.time = timer.time;
             [localRoutine addTimersObject:localTimer];
         } completion:^(BOOL success, NSError *error) {
             completionBlock(success);

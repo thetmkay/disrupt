@@ -15,4 +15,10 @@
 @dynamic nameForRoutine;
 @dynamic timers;
 
+- (void)addTimersObject:(Timer *)value {
+    NSMutableOrderedSet* tempSet = [NSMutableOrderedSet orderedSetWithOrderedSet:self.timers];
+    [tempSet addObject:value];
+    self.timers = tempSet;
+}
+
 @end
