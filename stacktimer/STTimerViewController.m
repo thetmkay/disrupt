@@ -404,12 +404,12 @@
     NSLog(@"Email %@", actor_email);
     
     NSDictionary *actor = @{@"name":actor_name,@"email":actor_email};
-    NSDictionary *object = @{@"url":timerURL,@"title":@"See Timer", @"type":@"page"};
+    NSDictionary *object = @{@"url":timerURL,@"title":@"a routine", @"type":@"page"};
     
     
     
     // Query params (in this case there are no params, but if there were, this is how you'd add them)
-    NSDictionary *activity = @{@"actor": actor, @"object": object, @"message":@"Hey check out!", @"action":@"stacktimer:share"};
+    NSDictionary *activity = @{@"actor": actor, @"object": object, @"message":@"Hey check out my awesome routine!", @"action":@"stacktimer:share"};
     
     NSDictionary *params = @{@"activity":activity};
     
@@ -421,6 +421,12 @@
           parameters:params
              success:^(id responseObject) {
                  NSLog(@"Sample API Call JSON: %@", responseObject);
+                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Routine Posted!"
+                                                                 message:@"Congratulations you just shared your routine on Yammer!"
+                                                                delegate:nil
+                                                       cancelButtonTitle:@"OK"
+                                                       otherButtonTitles:nil];
+                 [alert show];
              }
              failure:^(NSInteger statusCode, NSError *error) {
                  NSLog(@"activity %@", activity);
